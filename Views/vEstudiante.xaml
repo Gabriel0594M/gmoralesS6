@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gmoralesS6.Views.vEstudiante"
+             Title="">
+    <Grid RowDefinitions="Auto,Auto,*" Padding="10">
+
+        <Label Grid.Row="0"
+               Text="SEMANA 6: CRUD ESTUDIANTES"
+               FontSize="20"
+               HorizontalOptions="Center"
+               Margin="0,0,0,10"/>
+
+        <!-- Encabezado de la tabla -->
+        <Grid Grid.Row="1"
+              ColumnDefinitions="80,*,*,60"
+              BackgroundColor="#512BD4"
+              Padding="8">
+            <Label Grid.Column="0" Text="Código" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Text="Nombre" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="2" Text="Apellido" TextColor="White" FontAttributes="Bold"/>
+            <Label Grid.Column="3" Text="Edad" TextColor="White" FontAttributes="Bold"/>
+        </Grid>
+
+        <!-- Filas de la tabla -->
+        <ListView Grid.Row="2"
+                  x:Name="listaEstudiantes"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="LightGray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid ColumnDefinitions="80,*,*,60" Padding="8">
+                            <Label Grid.Column="0" Text="{Binding codigo}" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Text="{Binding nombre}" VerticalOptions="Center"/>
+                            <Label Grid.Column="2" Text="{Binding apellido}" VerticalOptions="Center"/>
+                            <Label Grid.Column="3" Text="{Binding edad}" VerticalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
