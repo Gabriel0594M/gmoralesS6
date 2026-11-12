@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gmoralesS6.Views.vEstudiante"
              Title="">
-    <Grid RowDefinitions="Auto,Auto,*" Padding="10">
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="10">
 
         <Label Grid.Row="0"
                Text="SEMANA 6: CRUD ESTUDIANTES"
@@ -11,7 +11,7 @@
                HorizontalOptions="Center"
                Margin="0,0,0,10"/>
 
-        <!-- Encabezado de la tabla -->
+        
         <Grid Grid.Row="1"
               ColumnDefinitions="80,*,*,60"
               BackgroundColor="#512BD4"
@@ -22,9 +22,9 @@
             <Label Grid.Column="3" Text="Edad" TextColor="White" FontAttributes="Bold"/>
         </Grid>
 
-        <!-- Filas de la tabla -->
         <ListView Grid.Row="2"
                   x:Name="listaEstudiantes"
+                  ItemSelected="listaEstudiantes_ItemSelected"
                   SeparatorVisibility="Default"
                   SeparatorColor="LightGray">
             <ListView.ItemTemplate>
@@ -40,5 +40,12 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+      
+        <Button Grid.Row="3"
+                x:Name="btnAgregar"
+                Text="Agregar estudiante"
+                Margin="0,10,0,0"
+                Clicked="btnAgregar_Clicked"/>
     </Grid>
 </ContentPage>

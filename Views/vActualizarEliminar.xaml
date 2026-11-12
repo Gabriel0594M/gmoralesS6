@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gmoralesS6.Views.vActualizarEliminar"
+             Title="Actualizar / Eliminar">
+    <VerticalStackLayout Spacing="20" Padding="20">
+
+        <Label Text="Actualizar o Eliminar Estudiante"
+               FontSize="20"
+               HorizontalOptions="Center"/>
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+              ColumnDefinitions="Auto,*"
+              RowSpacing="10"
+              ColumnSpacing="10">
+
+            <Label Text="Código"
+                   Grid.Row="0" Grid.Column="0"
+                   VerticalOptions="Center"/>
+            <Entry x:Name="txtCodigo"
+                   IsReadOnly="True"
+                   Grid.Row="0" Grid.Column="1"/>
+
+            <Label Text="Nombre del estudiante"
+                   Grid.Row="1" Grid.Column="0"
+                   VerticalOptions="Center"/>
+            <Entry x:Name="txtNombre"
+                   Placeholder="Ingresa el nombre"
+                   Grid.Row="1" Grid.Column="1"/>
+
+            <Label Text="Apellido del estudiante"
+                   Grid.Row="2" Grid.Column="0"
+                   VerticalOptions="Center"/>
+            <Entry x:Name="txtApellido"
+                   Placeholder="Ingresa el apellido"
+                   Grid.Row="2" Grid.Column="1"/>
+
+            <Label Text="Edad del estudiante"
+                   Grid.Row="3" Grid.Column="0"
+                   VerticalOptions="Center"/>
+            <Entry x:Name="txtEdad"
+                   Placeholder="Ingresa la edad"
+                   Keyboard="Numeric"
+                   MaxLength="2"
+                   TextChanged="txtEdad_TextChanged"
+                   Grid.Row="3" Grid.Column="1"/>
+        </Grid>
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+            <Button x:Name="btnActualizar"
+                    Grid.Column="0"
+                    Text="Actualizar"
+                    Clicked="btnActualizar_Clicked"/>
+            <Button x:Name="btnEliminar"
+                    Grid.Column="1"
+                    Text="Eliminar"
+                    BackgroundColor="#C62828"
+                    TextColor="White"
+                    Clicked="btnEliminar_Clicked"/>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
